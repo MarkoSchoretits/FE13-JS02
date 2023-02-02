@@ -9,7 +9,47 @@
 <body>
     
     <script>
-        
+/*
+        // this didn't work - scope!!! //
+        let temp = Math.random() * 30 - 5;
+        if (temp < 10) {
+        let evaluation = "cold"}
+        else {evaluation = "moderate"};
+        console.log (`temperature: ${temp}, ${evaluation}`);
+
+
+        // declaring the variables first helped //
+        var temp;
+        var evaluation;
+        temp = Math.random() * 30 - 5;
+        if (temp < 10) {
+        evaluation = "cold"}
+        else {evaluation = "moderate"};
+        console.log (`temperature: ${temp}, ${evaluation}`);
+*/
+        // more elegant //
+        const getTemp = () => {
+            let result = Math.random() *30 -5; 
+            return result;
+        }
+        const getEval = (theta) => {
+            if (theta < 10) {
+                let result = "cold";
+                return result;
+            }
+            else {
+                let result = "moderate";
+            return result;
+            }
+        }
+        const printTemp = () => {
+            console.log (`temperature: ${temp}, ${evaluation}`);
+        }
+
+        var temp = getTemp(); // () essential when calling a function //
+        var evaluation = getEval(temp);
+        printTemp();
+
     </script>
 </body>
 </html>
